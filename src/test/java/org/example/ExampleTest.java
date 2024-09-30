@@ -19,11 +19,29 @@ public class ExampleTest {
     }
 
     @Test
-    public void sumarTestBoolean(){
+    public void sumarTestBooleanTrue(){
 
         int result = example.sumar(10, 10); // 20
 
         // esto lo que hace es evaluar si un resultado es verdadero
         assertTrue(result < 30);
+    }
+
+    @Test
+    public void sumarTestBooleanFalse(){
+
+        int result = example.sumar(10, 10); // 20
+
+        // esto lo que hace es evaluar si un resultado es falso
+        assertFalse(result > 30);
+    }
+
+    @Test
+    public void sumarTestNotNull(){
+
+        int result = example.sumar(10, 10); // 20
+
+        // esto lo que hace es evaluar si un valor no es null
+        assertNotNull(result);
     }
 }
