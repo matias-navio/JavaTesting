@@ -76,7 +76,7 @@ public class Practice {
     }
 
     // 10. Método que calcula la media de una lista de enteros
-    public double calcularMedia(List<Integer> lista) {
+    public double calculateAverage(List<Integer> lista) {
         if (lista == null || lista.isEmpty()) {
             throw new IllegalArgumentException("La lista no puede ser nula o vacía");
         }
@@ -87,7 +87,7 @@ public class Practice {
     }
 
     // 11. Método para convertir una lista de enteros a lista de strings
-    public String convertirListaAString(List<String> lista) {
+    public String convertListToString(List<String> lista) {
         return lista.stream()
                 .map(String::toUpperCase)
                 .collect(Collectors.joining(","));

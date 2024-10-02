@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 public class PracticeTest {
@@ -196,5 +197,57 @@ public class PracticeTest {
         assertEquals(List.of("1", "2", "3", "4", "5"), result);
     }
 
+    // test que valida la media de una lista llena
+    @Test
+    public void testCalculateAverage(){
+
+        // Given
+        List<Integer> numbers = List.of(10, 4, 2, 6); // media 5.5
+
+        // When
+        double result = practice.calculateAverage(numbers);
+
+        // Then
+        assertEquals(5.5, result);
+    }
+
+    // test que valida la media de una lista vacia
+    @Test
+    public void testCalculateAverageErrorEmpty(){
+
+        // Given
+        List<Integer> number = Collections.emptyList();
+
+        // Then
+        assertThrows(IllegalArgumentException.class, () -> {
+            practice.calculateAverage(number);
+        });
+    }
+
+    // test que valida la media de una lista null
+    @Test
+    public void testCalculateAverageErrorNull(){
+
+        // Given
+        List<Integer> numbers = null;
+
+        // When - Then
+        assertThrows(IllegalArgumentException.class, () -> {
+            practice.calculateAverage(numbers);
+        });
+    }
+
+    @Test
+    public void testConvertListToString(){
+
+        // Given
+        List<String> words = List.of("Hola", "Chau", "Vaso");
+
+        // When
+        String result = practice.convertListToString(words);
+
+        // Then
+        assertEquals("HOLA,CHAU,VASO", result);
+    }
 
 }
