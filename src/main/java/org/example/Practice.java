@@ -35,14 +35,14 @@ public class Practice {
     }
 
     // metodo que calcula el factorial de un numero
-    public long factorial(int num){
+    public long factorial(int number){
 
-        if(num < 0){
+        if(number < 0){
             throw new IllegalArgumentException("El numero no puede ser negativo");
         }
 
         long result = 1;
-        for(int i = 1; i <= num; i++){
+        for(int i = 1; i <= number; i++){
             result *= i;
         }
 
@@ -50,12 +50,12 @@ public class Practice {
     }
 
     // 7. Método para verificar si un número es primo
-    public boolean esPrimo(int numero) {
-        if (numero <= 1) {
+    public boolean isCousin(int number) {
+        if (number <= 1) {
             return false;
         }
-        for (int i = 2; i * i <= numero; i++) {
-            if (numero % i == 0) {
+        for (int i = 2; i * i <= number; i++) {
+            if (number % i == 0) {
                 return false;
             }
         }
@@ -63,14 +63,14 @@ public class Practice {
     }
 
     // 8. Método que simula un retraso y retorna un mensaje
-    public String mensajeConRetraso() throws InterruptedException {
+    public String delayedMessage() throws InterruptedException {
         Thread.sleep(5000);
         return "Listo después de retraso";
     }
 
     // 9. Método para convertir una lista de enteros a lista de strings
-    public List<String> convertirAString(List<Integer> lista) {
-        return lista.stream()
+    public List<String> convertToString(List<Integer> list) {
+        return list.stream()
                 .map(String::valueOf)
                 .collect(Collectors.toList());
     }

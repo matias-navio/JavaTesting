@@ -74,10 +74,127 @@ public class PracticeTest {
         assertTrue(result);
     }
 
+    // test que verifica si un elemento es null
     @Test
     public void testRevertChain(){
 
         // Given
+        String element = "cadena"; // anedac
 
+        // When
+        String result = practice.revertChain(element);
+
+        // Then
+        assertEquals("anedac", result);
     }
+
+    // test que verifica si el factorial de un num es igual a un resultado
+    @Test
+    public void testFactorial(){
+
+        // Given
+        int number = 4; // factorial = 24
+
+        // When
+        long result = practice.factorial(number);
+
+        // Then
+        assertEquals(24, result);
+    }
+
+    // test para validar una excepcion
+    @Test
+    public void testFactorialError(){
+
+        // Given
+        int number = -4;
+
+        // Then
+        assertThrows(IllegalArgumentException.class, () -> {
+            practice.factorial(number);
+        });
+    }
+
+    // test que verifica si un numero es primo
+    @Test
+    public void testIsCousin(){
+
+        // Given
+        int number = 2; // es primo
+
+        // When
+        boolean result = practice.isCousin(number);
+
+        // Then
+        assertTrue(result);
+    }
+
+    // test que verifica si el argumento es uno o menor a uno
+    @Test
+    public void testIsCousinLessThanOne(){
+
+        // Given
+        int number = 1; // uno o menor a uno
+
+        // When
+        boolean result = practice.isCousin(number);
+
+        // Then
+        assertFalse(result);
+    }
+
+    // test que verifica que un numero mayor a uno sea primo
+    @Test
+    public void testNotIsCousin(){
+
+        // Given
+        int number = 8; // mayor a uno no primo
+
+        // When
+        boolean result = practice.isCousin(number);
+
+        // Then
+        assertFalse(result);
+    }
+
+    // test que verifica un numero primo mayor a 4
+    @Test
+    public void testIsCousinMoreThanFour(){
+
+        // Given
+        int number = 5; // es primo
+
+        // When
+        boolean result = practice.isCousin(number);
+
+        // Then
+        assertTrue(result);
+    }
+
+    // test que verifica un mensaje despues de un retraso
+    @Test
+    public void testDelayedMessage() throws InterruptedException {
+
+        // When
+        String result = practice.delayedMessage();
+
+        // Then
+        assertEquals("Listo después de retraso", result);
+    }
+
+    // test que verifica la convercion de una lista a String
+    @Test
+    public void testConvertToString(){
+
+        // Given
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+        // When
+        List<String> result = practice.convertToString(numbers);
+
+        // Then
+        assertEquals(List.of("1", "2", "3", "4", "5"), result);
+    }
+
+
 }
